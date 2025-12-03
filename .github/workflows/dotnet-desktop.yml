@@ -38,3 +38,10 @@ jobs:
     - name: Install MAUI workload
       run: dotnet workload install maui
     - run: dotnet build GithubActionsLearn
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: maui-build
+        path: |
+          GithubActionsLearn/bin/Release/
